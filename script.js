@@ -10,6 +10,18 @@ function getComputerChoice(){
 }
 
 function playRound (playerSelection, computerSelection) {
-
+    if (playerSelection === 'rock') {
+        if (computerSelection === 'scissors') {
+            return 'Rock wins!';
+        } else if (computerSelection === 'paper') {
+            return 'Paper wins!';
+        } else {
+            return 'Tie game!';
+        }
+        }
 }
-console.log(getComputerChoice());
+
+
+const playerSelection = 'rock';
+const computerSelection = getComputerChoice();
+console.log (playRound(playerSelection, computerSelection));
