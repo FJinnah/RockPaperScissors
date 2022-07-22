@@ -9,7 +9,7 @@ function getComputerChoice(){
     }
 }
 
-let getPlayerChoice = prompt ('Please type in either rock, paper, or scissors.');
+let getPlayerChoice = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
 
 if (getPlayerChoice == 'rock') {
     getPlayerChoice = 'rock';
