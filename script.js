@@ -21,6 +21,8 @@ if (getPlayerChoice == 'rock') {
     alert('Choice not recognized. Please refresh the page.')
 }
 
+const playerSelection = getPlayerChoice;
+const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
@@ -56,25 +58,8 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-    playRound(playerSelection, computerSelection); {
-    if (playerSelection === 'rock') {
-        if (computerSelection === 'scissors') {
-            return 'Rock wins!';
-        } else if (computerSelection === 'paper') {
-            return 'Paper wins!';
-        } else {
-            return 'Tie game!';
-        }
-        }
-    }
-    console.log(playRound(playerSelection, computerSelection))
+      playRound();
 }
 }
 
-
-   
-
-
-const playerSelection = getPlayerChoice;
-const computerSelection = getComputerChoice();
-console.log(game());
+game();
