@@ -1,3 +1,7 @@
+let playerScore = 0;
+let computerScore = 0;
+let ties = 0;
+
 function getComputerChoice(){
     let choice = Math.random() * 3;
     if (choice <= 1) {
@@ -21,40 +25,42 @@ if (getPlayerChoice == 'rock') {
     alert('Choice not recognized. Please refresh the page.')
 }
 
-const playerSelection = getPlayerChoice;
-const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
-            return 'Rock wins!';
+            return playerWinMessage;
         } else if (computerSelection === 'paper') {
-            return 'Paper wins!';
+            return computerWinMessage;
         } else {
-            return 'Tie game!';
+            return tieMessage;
         }
         }
     
     if (playerSelection === 'paper') {
         if (computerSelection === 'scissors') {
-            return 'Scissors wins!';
+            return computerWinMessage;
         } else if (computerSelection === 'rock') {
-            return 'Paper wins!';
+            return playerWinMessage;
         } else {
-            return 'Tie game!';
+            return tieMessage;
         }
         }
 
         if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') {
-            return 'Scissors wins!';
+            return playerWinMessage;
         } else if (computerSelection === 'rock') {
-            return 'Rock wins!';
+            return computerWinMessage;
         } else {
-            return 'Tie game!';
+            return tieMessage;
         }
         }
 }
+
+let playerWinMessage = 'Player wins this round!';
+let computerWinMessage = 'Computer wins this round!';
+let tieMessage = 'This round is a tie';
 
 function game() {
     for (let i = 0; i < 5; i++) {
@@ -62,4 +68,7 @@ function game() {
 }
 }
 
-game();
+const playerSelection = getPlayerChoice;
+const computerSelection = getComputerChoice();
+
+console.log(playRound(playerSelection, computerSelection));
