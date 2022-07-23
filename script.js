@@ -15,18 +15,7 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    getPlayerChoice = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
-    if (getPlayerChoice == 'rock') {
-        return 'rock';
-    } else if (getPlayerChoice == 'scissors') {
-        return 'scissors';
-    } else if (getPlayerChoice == 'paper') {
-        return 'paper';
-    } else {
-        alert('Choice not recognized. Please refresh the page.')
-    }
-    }
+function getPlayerChoice() {}
 
 
 function playRound(playerSelection, computerSelection) {
@@ -72,13 +61,15 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 20; i++) {
-        if (playerScore, computerScore === 3) break;
+        if (playerScore == 3) {
+            return console.log('Player wins!');
+        } else if (computerScore == 3) {
+            return console.log('Computer wins :(');
+        }
         const computerSelection = getComputerChoice();
         const playerSelection = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
         console.log(playRound(playerSelection, computerSelection));
 }      
 }
-
-
 
 game();
