@@ -71,7 +71,8 @@ function playRound(playerSelection, computerSelection) {
     }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 20; i++) {
+        if (playerScore, computerScore === 3) break;
         const computerSelection = getComputerChoice();
         const playerSelection = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
         console.log(playRound(playerSelection, computerSelection));
