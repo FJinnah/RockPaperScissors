@@ -32,31 +32,40 @@ function getPlayerChoice() {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
-            return 'You selected rock and the computer selected scissors. You win!';
+            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You win! The score is now Player: ' + ++playerScore +
+            ', Computer: ' + computerScore + ', Ties: ' + ties + '.';
         } else if (computerSelection === 'paper') {
-            return 'You selected rock and the computer selected paper. You lose.';
+            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You lose. The score is now Player: ' + playerScore +
+            ', Computer: ' + ++computerScore + ', Ties: ' + ties + '.';
         } else {
-            return 'You selected rock and the computer also selected rock. Tie game.';
+            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. Tie game. The score is now Player: ' + playerScore +
+            ', Computer: ' + computerScore + ', Ties: ' + ++ties + '.';
         }
         }
     
     if (playerSelection === 'paper') {
         if (computerSelection === 'scissors') {
-            return 'You selected paper and the computer selected scissors. You lose.';
+            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You lose. The score is now Player: ' + playerScore +
+            ', Computer: ' + ++computerScore + ', Ties: ' + ties + '.';
         } else if (computerSelection === 'rock') {
-            return 'You selected paper and the computer selected rock. You win!';
+            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You win! The score is now Player: ' + ++playerScore +
+            ', Computer: ' + computerScore + ', Ties: ' + ties + '.';
         } else {
-            return 'You selected paper and the computer also selected paper. Tie game.';
+            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. Tie game. The score is now Player: ' + playerScore +
+            ', Computer: ' + computerScore + ', Ties: ' + ++ties + '.';
         }
         }
 
         if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') {
-            return 'You selected scissors and the computer selected paper. You win!';
+            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You win! The score is now Player: ' + ++playerScore +
+            ', Computer: ' + computerScore + ', Ties: ' + ties + '.';
         } else if (computerSelection === 'rock') {
-            return 'You selected scissors and the computer selected rock. You lose.';
+            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You lose. The score is now Player: ' + playerScore +
+            ', Computer: ' + ++computerScore + ', Ties: ' + ties + '.'; 
         } else {
-            return 'You selected scissors and the computer also selected scissors. Tie game.';
+            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. Tie game. The score is now Player: ' + playerScore +
+            ', Computer: ' + computerScore + ', Ties: ' + ++ties + '.';
         }
         }
     }
