@@ -1,6 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
 let ties = 0;
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
 
 function getComputerChoice() {
     let choice = Math.random() * 3;
@@ -30,56 +32,43 @@ function getPlayerChoice() {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
-            return playerWinMessage;
+            return 'You selected rock and the computer selected scissors. You win!';
         } else if (computerSelection === 'paper') {
-            return computerWinMessage;
+            return 'You selected rock and the computer selected paper. You lose.';
         } else {
-            return tieMessage;
+            return 'You selected rock and the computer also selected rock. Tie game.';
         }
         }
     
     if (playerSelection === 'paper') {
         if (computerSelection === 'scissors') {
-            return computerWinMessage;
+            return 'You selected paper and the computer selected scissors. You lose.';
         } else if (computerSelection === 'rock') {
-            return playerWinMessage;
+            return 'You selected paper and the computer selected rock. You win!';
         } else {
-            return tieMessage;
+            return 'You selected paper and the computer also selected paper. Tie game.';
         }
         }
 
         if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') {
-            return playerWinMessage;
+            return 'You selected scissors and the computer selected paper. You win!';
         } else if (computerSelection === 'rock') {
-            return computerWinMessage;
+            return 'You selected scissors and the computer selected rock. You lose.';
         } else {
-            return tieMessage;
+            return 'You selected scissors and the computer also selected scissors. Tie game.';
         }
         }
-}
-
-const playerWinMessage = 'Player wins this round!';
-const computerWinMessage = 'Computer wins this round!';
-const tieMessage = 'This round is a tie';
+    }
 
 function game() {
     for (let i = 0; i < 5; i++) {
-    playRound(playerSelection, computerSelection);
-    let roundResult = playRound(playerSelection, computerSelection);
-    
-    if (roundResult == playerWinMessage) {
-        console.log('You picked ' + playerSelection + ' and the computer chose ' + computerSelection + ' 1 point for player!');
-    } else if (roundResult == computerWinMessage) {
-        console.log ('You picked ' + playerSelection + ' and the computer chose ' + computerSelection + ' 1 point for computer!');
-    } else {
-        console.log('You picked ' + playerSelection + ' and the computer chose ' + computerSelection + ' Tie!');
-    }
-    }
+        const computerSelection = getComputerChoice();
+        const playerSelection = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
+        console.log(playRound(playerSelection, computerSelection));
 }      
+}
 
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
 
-console.log(game());
+game();
