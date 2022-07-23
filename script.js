@@ -2,7 +2,7 @@ let playerScore = 0;
 let computerScore = 0;
 let ties = 0;
 
-function getComputerChoice(){
+function getComputerChoice() {
     let choice = Math.random() * 3;
     if (choice <= 1) {
         return 'rock';
@@ -58,42 +58,23 @@ function playRound(playerSelection, computerSelection) {
         }
 }
 
-let playerWinMessage = 'Player wins this round!';
-let computerWinMessage = 'Computer wins this round!';
-let tieMessage = 'This round is a tie';
+const playerWinMessage = 'Player wins this round!';
+const computerWinMessage = 'Computer wins this round!';
+const tieMessage = 'This round is a tie';
 
 function game() {
     for (let i = 0; i < 5; i++) {
+    playRound(playerSelection, computerSelection);
     
-    function getComputerChoice() {
-    let choice = Math.random() * 3;
-    if (choice <= 1) {
-        return 'rock';
-    } else if (choice <=2) {
-        return 'paper';
-    } else {
-        return 'scissors';
-    }
-}
-
-let getPlayerChoice = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
-
-if (getPlayerChoice == 'rock') {
-    getPlayerChoice = 'rock';
-} else if (getPlayerChoice == 'scissors') {
-    getPlayerChoice = 'scissors';
-} else if (getPlayerChoice == 'paper') {
-    getPlayerChoice = 'paper';
-} else {
-    alert('Choice not recognized. Please refresh the page.')
-}
-    let roundResult = playRound (playerSelection, computerSelection);
+    let roundResult = playRound(playerSelection, computerSelection);
     console.log(roundResult);
 
-    if (roundResult = playerWinMessage) {
+    if (roundResult == playerWinMessage) {
         console.log('1 point for player!');
+    } else if (roundResult == computerWinMessage) {
+        console.log ('1 point for computer!');
     } else {
-        console.log('1 point for computer!');
+        console.log('Tie!');
     }
     }
 }      
