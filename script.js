@@ -4,6 +4,8 @@ let ties = 0;
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
+
+//Allows the computer to randomly choose between rock, paper, and scissors.
 function getComputerChoice() {
     let choice = Math.random() * 3;
     if (choice <= 1) {
@@ -15,9 +17,10 @@ function getComputerChoice() {
     }
 }
 
+//Allows the player to choose between rock, paper, and scissors. They are prompted in the game() function.
 function getPlayerChoice() {}
 
-
+//Checks the winner and prints a message to the console with information about choices, winner, and score.
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
@@ -58,7 +61,7 @@ function playRound(playerSelection, computerSelection) {
         }
         }
     }
-
+//Combines everything into a proper game. The loop is run and ends when either the player or computer reaches 3 (best out of 5).
 function game() {
     for (let i = 0; i < 20; i++) {
         if (playerScore == 3) {
@@ -72,4 +75,5 @@ function game() {
 }      
 }
 
+//Runs the function in the console.
 game();
