@@ -13,17 +13,18 @@ function getComputerChoice() {
     }
 }
 
-let getPlayerChoice = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
-
-if (getPlayerChoice == 'rock') {
-    getPlayerChoice = 'rock';
-} else if (getPlayerChoice == 'scissors') {
-    getPlayerChoice = 'scissors';
-} else if (getPlayerChoice == 'paper') {
-    getPlayerChoice = 'paper';
-} else {
-    alert('Choice not recognized. Please refresh the page.')
-}
+function getPlayerChoice() {
+    getPlayerChoice = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
+    if (getPlayerChoice == 'rock') {
+        return 'rock';
+    } else if (getPlayerChoice == 'scissors') {
+        return 'scissors';
+    } else if (getPlayerChoice == 'paper') {
+        return 'paper';
+    } else {
+        alert('Choice not recognized. Please refresh the page.')
+    }
+    }
 
 
 function playRound(playerSelection, computerSelection) {
@@ -65,7 +66,6 @@ const tieMessage = 'This round is a tie';
 function game() {
     for (let i = 0; i < 5; i++) {
     playRound(playerSelection, computerSelection);
-    
     let roundResult = playRound(playerSelection, computerSelection);
     console.log(roundResult);
 
@@ -80,7 +80,7 @@ function game() {
 }      
 
 
-const playerSelection = getPlayerChoice;
+const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
 console.log(game());
