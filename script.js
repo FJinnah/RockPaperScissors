@@ -67,14 +67,13 @@ function game() {
     for (let i = 0; i < 5; i++) {
     playRound(playerSelection, computerSelection);
     let roundResult = playRound(playerSelection, computerSelection);
-    console.log(roundResult);
-
+    
     if (roundResult == playerWinMessage) {
-        console.log('1 point for player!');
+        console.log('You picked ' + playerSelection + ' and the computer chose ' + computerSelection + ' 1 point for player!');
     } else if (roundResult == computerWinMessage) {
-        console.log ('1 point for computer!');
+        console.log ('You picked ' + playerSelection + ' and the computer chose ' + computerSelection + ' 1 point for computer!');
     } else {
-        console.log('Tie!');
+        console.log('You picked ' + playerSelection + ' and the computer chose ' + computerSelection + ' Tie!');
     }
     }
 }      
