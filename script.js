@@ -75,5 +75,8 @@ function game() {
 }      
 }
 
+//UI additions
+
+
 //Runs the function in the console.
-game();
+// game();
