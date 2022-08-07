@@ -65,18 +65,30 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     for (let i = 0; i < 20; i++) {
         if (playerScore == 3) {
-            return console.log('Player wins!');
+            return console.log('Player wins!game();');
         } else if (computerScore == 3) {
             return console.log('Computer wins :(');
         }
         const computerSelection = getComputerChoice();
-        const playerSelection = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
+        // const playerSelection = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
         console.log(playRound(playerSelection, computerSelection));
 }      
 }
 
 //UI additions
+const rockChoice = document.querySelector('#rockChoice');
+rockChoice.addEventListener('click', () => {
+    console.log('rock');
+});
 
+const paperChoice = document.querySelector('#paperChoice');
+paperChoice.addEventListener('click', () => {
+    console.log('paper');
+});
 
+const scissorsChoice = document.querySelector('#scissorsChoice');
+scissorsChoice.addEventListener('click', () => {
+    console.log('scissors');
+});
 //Runs the function in the console.
 // game();
