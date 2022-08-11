@@ -62,33 +62,35 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 //Combines everything into a proper game. The loop is run and ends when either the player or computer reaches 3 (best out of 5).
-function game() {
-    for (let i = 0; i < 20; i++) {
-        if (playerScore == 3) {
-            return console.log('Player wins!game();');
-        } else if (computerScore == 3) {
-            return console.log('Computer wins :(');
-        }
-        const computerSelection = getComputerChoice();
-        // const playerSelection = prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
-        console.log(playRound(playerSelection, computerSelection));
-}      
-}
+// function game() {
+//     for (let i = 0; i < 20; i++) {
+//         if (playerScore == 3) {
+//             return console.log('Player wins!');
+//         } else if (computerScore == 3) {
+//             return console.log('Computer wins :(');
+//         }
+//         const computerSelection = getComputerChoice();
+//         const playerSelection = document.querySelector('.button');
+//         // prompt ('Please type in either rock, paper, or scissors.').toLowerCase();
+//         console.log(playRound(playerSelection, computerSelection));
+// }      
+// }
 
 //UI additions
 const rockChoice = document.querySelector('#rockChoice');
 rockChoice.addEventListener('click', () => {
-    console.log('rock');
+    console.log(playRound('rock', computerSelection));
 });
 
 const paperChoice = document.querySelector('#paperChoice');
 paperChoice.addEventListener('click', () => {
-    console.log('paper');
+    console.log(playRound('paper', computerSelection));
 });
 
 const scissorsChoice = document.querySelector('#scissorsChoice');
 scissorsChoice.addEventListener('click', () => {
-    console.log('scissors');
+    console.log(playRound('scissors', computerSelection));
 });
-//Runs the function in the console.
+
+// //Runs the function in the console.
 // game();
