@@ -79,17 +79,31 @@ function playRound(playerSelection, computerSelection) {
 //UI additions
 const rockChoice = document.querySelector('#rockChoice');
 rockChoice.addEventListener('click', () => {
-    console.log(playRound('rock', computerSelection));
+    const rockResult = playRound('rock', computerSelection);
+    const scoreOne = document.querySelector('#score');
+    const scoreDisplay = document.createElement('p');
+    scoreDisplay.textContent = rockResult.toString();
+    scoreOne.appendChild(scoreDisplay);
 });
 
 const paperChoice = document.querySelector('#paperChoice');
 paperChoice.addEventListener('click', () => {
-    console.log(playRound('paper', computerSelection));
+    const paperResult = playRound('paper', computerSelection);
+    const scoreOne = document.querySelector('#score');
+    const scoreDisplay = document.createElement('p');
+    scoreDisplay.textContent = paperResult.toString();
+    scoreOne.appendChild(scoreDisplay);
 });
 
 const scissorsChoice = document.querySelector('#scissorsChoice');
 scissorsChoice.addEventListener('click', () => {
-    console.log(playRound('scissors', computerSelection));
+    const scissorsResult = playRound('scissors', computerSelection);
+    const scoreOne = document.querySelector('#score');
+    const scoreDisplay = document.createElement('p');
+    scoreDisplay.textContent = scissorsResult.toString();
+    scoreOne.appendChild(scoreDisplay);
+    
+    // playRound('scissors', computerSelection)
 });
 
 // //Runs the function in the console.
