@@ -17,6 +17,30 @@ function getComputerChoice() {
     }
 }
 
+//Increments the player score
+function playerWin() {
+    let playerTestScore = document.querySelector('#playerScore');
+    let number = playerTestScore.innerHTML;
+    number++;
+    playerTestScore.innerHTML = number;
+}
+
+//Increments the computer score
+function computerWin() {
+    let computerTestScore = document.querySelector('#computerScore');
+    let number = computerTestScore.innerHTML;
+    number++;
+    computerTestScore.innerHTML = number;
+}
+
+//Increments the tie score
+function tieWin() {
+    let tiesTestScore = document.querySelector('#tiesScore');
+    let number = tiesTestScore.innerHTML;
+    number++;
+    tiesTestScore.innerHTML = number;
+}
+
 //Allows the player to choose between rock, paper, and scissors. They are prompted in the game() function.
 function getPlayerChoice() {}
 
@@ -24,14 +48,11 @@ function getPlayerChoice() {}
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
-            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You win! The score is now Player: ' + ++playerScore +
-            ', Computer: ' + computerScore + ', Ties: ' + ties + '.';
-        } else if (computerSelection === 'paper') {
-            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You lose. The score is now Player: ' + playerScore +
-            ', Computer: ' + ++computerScore + ', Ties: ' + ties + '.';
+            playerWin();
+         } else if (computerSelection === 'paper') {
+             computerWin();
         } else {
-            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. Tie game. The score is now Player: ' + playerScore +
-            ', Computer: ' + computerScore + ', Ties: ' + ++ties + '.';
+            tieWin();
         }
         }
     
@@ -81,9 +102,9 @@ const rockChoice = document.querySelector('#rockChoice');
 rockChoice.addEventListener('click', () => {
     const rockResult = playRound('rock', computerSelection);
     const scoreOne = document.querySelector('#score');
-    const scoreDisplay = document.createElement('p');
-    scoreDisplay.textContent = rockResult.toString();
-    scoreOne.appendChild(scoreDisplay);
+    // const scoreDisplay = document.createElement('p');
+    // scoreDisplay.textContent = rockResult.toString();
+    // scoreOne.appendChild(scoreDisplay);
 });
 
 const paperChoice = document.querySelector('#paperChoice');
