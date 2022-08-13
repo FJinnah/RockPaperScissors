@@ -58,27 +58,21 @@ function playRound(playerSelection, computerSelection) {
     
     if (playerSelection === 'paper') {
         if (computerSelection === 'scissors') {
-            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You lose. The score is now Player: ' + playerScore +
-            ', Computer: ' + ++computerScore + ', Ties: ' + ties + '.';
+            computerWin();
         } else if (computerSelection === 'rock') {
-            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You win! The score is now Player: ' + ++playerScore +
-            ', Computer: ' + computerScore + ', Ties: ' + ties + '.';
+            playerWin();
         } else {
-            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. Tie game. The score is now Player: ' + playerScore +
-            ', Computer: ' + computerScore + ', Ties: ' + ++ties + '.';
+            tieWin();
         }
         }
 
         if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') {
-            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You win! The score is now Player: ' + ++playerScore +
-            ', Computer: ' + computerScore + ', Ties: ' + ties + '.';
+            playerWin();
         } else if (computerSelection === 'rock') {
-            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. You lose. The score is now Player: ' + playerScore +
-            ', Computer: ' + ++computerScore + ', Ties: ' + ties + '.'; 
+            computerWin();
         } else {
-            return 'You selected ' + playerSelection + ' and the computer selected ' + computerSelection + '. Tie game. The score is now Player: ' + playerScore +
-            ', Computer: ' + computerScore + ', Ties: ' + ++ties + '.';
+            tieWin();
         }
         }
     }
@@ -111,18 +105,18 @@ const paperChoice = document.querySelector('#paperChoice');
 paperChoice.addEventListener('click', () => {
     const paperResult = playRound('paper', computerSelection);
     const scoreOne = document.querySelector('#score');
-    const scoreDisplay = document.createElement('p');
-    scoreDisplay.textContent = paperResult.toString();
-    scoreOne.appendChild(scoreDisplay);
+    // const scoreDisplay = document.createElement('p');
+    // scoreDisplay.textContent = paperResult.toString();
+    // scoreOne.appendChild(scoreDisplay);
 });
 
 const scissorsChoice = document.querySelector('#scissorsChoice');
 scissorsChoice.addEventListener('click', () => {
     const scissorsResult = playRound('scissors', computerSelection);
     const scoreOne = document.querySelector('#score');
-    const scoreDisplay = document.createElement('p');
-    scoreDisplay.textContent = scissorsResult.toString();
-    scoreOne.appendChild(scoreDisplay);
+    // const scoreDisplay = document.createElement('p');
+    // scoreDisplay.textContent = scissorsResult.toString();
+    // scoreOne.appendChild(scoreDisplay);
     
     // playRound('scissors', computerSelection)
 });
