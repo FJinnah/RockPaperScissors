@@ -7,6 +7,7 @@ const computerSelection = getComputerChoice();
 
 //Allows the computer to randomly choose between rock, paper, and scissors.
 function getComputerChoice() {
+    for (let i = 0; i <20; i++) {
     let choice = Math.random() * 3;
     if (choice <= 1) {
         return 'rock';
@@ -14,6 +15,7 @@ function getComputerChoice() {
         return 'paper';
     } else {
         return 'scissors';
+    }
     }
 }
 
@@ -94,7 +96,7 @@ function playRound(playerSelection, computerSelection) {
 //UI additions
 const rockChoice = document.querySelector('#rockChoice');
 rockChoice.addEventListener('click', () => {
-    const rockResult = playRound('rock', computerSelection);
+    const rockResult = playRound('rock', getComputerChoice());
     const scoreOne = document.querySelector('#score');
     // const scoreDisplay = document.createElement('p');
     // scoreDisplay.textContent = rockResult.toString();
@@ -103,7 +105,7 @@ rockChoice.addEventListener('click', () => {
 
 const paperChoice = document.querySelector('#paperChoice');
 paperChoice.addEventListener('click', () => {
-    const paperResult = playRound('paper', computerSelection);
+    const paperResult = playRound('paper', getComputerChoice());
     const scoreOne = document.querySelector('#score');
     // const scoreDisplay = document.createElement('p');
     // scoreDisplay.textContent = paperResult.toString();
@@ -112,7 +114,7 @@ paperChoice.addEventListener('click', () => {
 
 const scissorsChoice = document.querySelector('#scissorsChoice');
 scissorsChoice.addEventListener('click', () => {
-    const scissorsResult = playRound('scissors', computerSelection);
+    const scissorsResult = playRound('scissors', getComputerChoice());
     const scoreOne = document.querySelector('#score');
     // const scoreDisplay = document.createElement('p');
     // scoreDisplay.textContent = scissorsResult.toString();
