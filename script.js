@@ -24,6 +24,10 @@ function playerWin() {
     number1++;
     playerTestScore.innerText = number1;
     playerScore++;
+
+    if (playerScore >= 5) {
+        resetGame();
+    }
 }
 
 //Increments the computer score
@@ -33,6 +37,10 @@ function computerWin() {
     number2++;
     computerTestScore.innerText = number2;
     computerScore++;
+
+    if (computerScore >= 5) {
+        resetGame();
+    }
 }
 
 //Increments the tie score
@@ -81,6 +89,15 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
+function resetGame() {
+    if (playerScore >= 5) {
+        alert('You win!');
+        location.reload();
+    } else if (computerScore >= 5) {
+        alert ('You lose.');
+        location.reload();
+    }
+}
 //UI additions
 const rockChoice = document.querySelector('#rockChoice');
 rockChoice.addEventListener('click', () => {
